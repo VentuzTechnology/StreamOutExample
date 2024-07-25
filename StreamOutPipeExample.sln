@@ -7,12 +7,13 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8C12A8DB-1DC1-4524-9113-FC51D240266B}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
+		LICENSE = LICENSE
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StreamOutTest", "StreamOutTest\StreamOutTest.csproj", "{5BEDA25C-DCEC-49DC-86DD-77CC579B638C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamOutTest", "StreamOutTest\StreamOutTest.csproj", "{5BEDA25C-DCEC-49DC-86DD-77CC579B638C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ventuz.StreamOut", "Ventuz.StreamOut\Ventuz.StreamOut.csproj", "{EDA0EBFA-19DF-4523-9378-EC44D666D450}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ventuz.StreamOut", "Ventuz.StreamOut\Ventuz.StreamOut.csproj", "{EDA0EBFA-19DF-4523-9378-EC44D666D450}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

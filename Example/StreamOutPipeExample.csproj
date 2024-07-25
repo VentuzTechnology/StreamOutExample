@@ -1,14 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <OutputType>Exe</OutputType>
-    <LangVersion>latest</LangVersion>
-    <AssemblyTitle>StreamOutPipeExample</AssemblyTitle>
-    <Product>StreamOutPipeExample</Product>
-    <Copyright>Copyright © 2024 Ventuz</Copyright>
-    <Platforms>AnyCPU</Platforms>
-  </PropertyGroup>
-	<ItemGroup>
-		<CSCompile Remove="TestUI\*\**" />
-	</ItemGroup>
+	
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<OutputType>Exe</OutputType>
+		<LangVersion>latest</LangVersion>
+		<AssemblyTitle>StreamOutPipeExample</AssemblyTitle>
+		<Product>StreamOutPipeExample</Product>
+		<Copyright>Copyright © 2024 Ventuz</Copyright>
+		<Platforms>AnyCPU</Platforms>
+	</PropertyGroup>
+		
 </Project>

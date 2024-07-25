@@ -7,6 +7,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<UseWPF>true</UseWPF>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<Copyright>Copyright © 2024 Ventuz</Copyright>
 	</PropertyGroup>
 
 	<ItemGroup>
