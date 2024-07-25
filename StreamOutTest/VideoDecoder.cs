@@ -24,7 +24,9 @@ namespace StreamOutTest
 
         public static void FindFfmpeg()
         {
-            static bool Test(string dir) => File.Exists(Path.Combine(dir, "avcodec-60.dll"));
+            var dllName = "avcodec-" + ffmpeg.LibraryVersionMap["avcodec"] + ".dll";
+
+            bool Test(string dir) => File.Exists(Path.Combine(dir, dllName));
 
             // find ffmpeg
             string folder = ".";
@@ -38,7 +40,7 @@ namespace StreamOutTest
                 {
                     var dlg = new OpenFolderDialog
                     {
-                        Title = "Please select a folder with FFMpeg 6.x in it (avcodec-60.dll, avutil-60.dll)",
+                        Title = $"Please select a folder with FFMpeg in it ({dllName} etc.)",
                     };
 
                     if (dlg.ShowDialog() == false)

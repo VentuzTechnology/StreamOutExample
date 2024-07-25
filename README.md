@@ -4,7 +4,7 @@ This repository contains example C# code for connecting to Ventuz Encoded Stream
 
 ## Building 
 
-The code should build with .NET 8 or later. The StreamOutTest project also needs the FFmpeg.AutoGen NuGet package, and to run StreamOutTest with video you'll need to get hold of a binary shared release of FFmpeg 6.x. A good starting point for that is [here](https://www.ffmpeg.org/download.html#build-windows).
+The code should build with .NET 8 or later. The StreamOutTest project also needs the FFmpeg.AutoGen NuGet package, and to run StreamOutTest with video you'll need to get hold of a binary shared release of FFmpeg 7.x. A good starting point for that is [here](https://www.ffmpeg.org/download.html#build-windows).
 
 ## Projects
 
@@ -19,5 +19,7 @@ This library contains a class for connecting to a Stream Out output, receiving r
 ### StreamOutTest 
 
 This is a full test application using WPF and FFmpeg that can display the video coming from Ventuz, and has full Keyboard, Mouse and Touch interaction capabilities.
+
+If you don't have FFmpeg binaries and cancel on the dialog box asking for them, the app will run without video but all interaction features will still work.
 
 NOTE: As this app is designed for simplicity, it lacks features like fullscreen output and proper video synchronization, and also has a bit more latency than necessary. This is on purpose in order to keep the code as readable as possible.

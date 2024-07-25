@@ -12,7 +12,7 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\Ventuz.StreamOut\Ventuz.StreamOut.csproj" />
-		<PackageReference Include="FFmpeg.AutoGen" Version="6.0.0.2" />
+		<PackageReference Include="FFmpeg.AutoGen" Version="7.0.0" />
 	</ItemGroup>
 
 </Project>
