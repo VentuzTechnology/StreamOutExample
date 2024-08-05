@@ -146,6 +146,18 @@ namespace StreamOutTest
                 client?.SendKey((uint)e.Text[0]);
             e.Handled = true;
         }
+       
+        static void OnKeyDown(object source, KeyEventArgs e)
+        {
+            client?.SendKeyDown((uint)KeyInterop.VirtualKeyFromKey(e.Key));
+            e.Handled = true;
+        }
+
+        static void OnKeyUp(object source, KeyEventArgs e)
+        {
+            client?.SendKeyUp((uint)KeyInterop.VirtualKeyFromKey(e.Key));
+            e.Handled = true;
+        }
 
         //-------------------------------------------------------------------
         // Touch input
@@ -210,6 +222,8 @@ namespace StreamOutTest
             image.MouseUp += OnMouseButtons;
             image.MouseWheel += OnMouseWheel;
             image.TextInput += OnTextInput;
+            image.KeyDown += OnKeyDown;
+            image.KeyUp += OnKeyUp;
             image.TouchDown += OnTouch;
             image.TouchMove += OnTouch;
             image.TouchUp += OnTouch;

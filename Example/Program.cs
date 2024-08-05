@@ -70,7 +70,9 @@ namespace StreamOutPipeExample
         TouchEnd = 0x12, // Release a touch. Must be followed by a TouchPara structure        
         TouchCancel = 0x13, // Cancal a touch if possible. Must be followed by a TouchPara structure
 
-        Key = 0x20, // Send a keystroke. Must be followed by a KeyPara structure
+        Char = 0x20, // Send a keystroke. Must be followed by a KeyPara structure
+        KeyDown = 0x21, // Send a key down event. Must be followed by a KeyPara structure
+        KeyUp = 0x22, // Send a key up event. Must be followed by a KeyPara structure
 
         MouseMove = 0x28, // Mouse positon update. Must be followed by a MouseXYPara structure
         MouseButtons = 0x29, // Mouse buttons update. Must be followed by a MouseButtonsPara structure
@@ -93,7 +95,7 @@ namespace StreamOutPipeExample
     [StructLayout(LayoutKind.Sequential)]
     public struct KeyPara
     {
-        public uint Code;   // UTF32 codepoint for pressed key. Control characters like LF and Backspace work.
+        public uint Code;   // UTF32 codepoint for Char, Windows VK_* for KeyUp/KeyDown
     };
 
     // Parameters for the MouseMove and MouseWheel PipeCommands
@@ -289,7 +291,7 @@ namespace StreamOutPipeExample
                     else
                     {
                         // forward all other keys to Ventuz
-                        SendCommand(stream, PipeCommand.Key, new KeyPara
+                        SendCommand(stream, PipeCommand.Char, new KeyPara
                         {
                             Code = rk.KeyChar
                         });

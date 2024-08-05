@@ -185,7 +185,13 @@ namespace Ventuz.StreamOut
         public void SendTouchCancel(TouchPara para) => SendCommand(PipeCommand.TouchCancel, para);
 
         /// <summary>Sends a "Key" command to Ventuz</summary>
-        public void SendKey(uint code) => SendCommand(PipeCommand.Key, code);
+        public void SendKey(uint code) => SendCommand(PipeCommand.Char, code);
+
+        /// <summary>Sends a "Key Down" command to Ventuz</summary>
+        public void SendKeyDown(uint vk) => SendCommand(PipeCommand.KeyDown, vk);
+
+        /// <summary>Sends a "Key Down" command to Ventuz</summary>
+        public void SendKeyUp(uint vk) => SendCommand(PipeCommand.KeyUp, vk);
 
         /// <summary>Sends a "Mouse Position" command to Ventuz</summary>
         public void SendMouseMove(MouseXYPara para) => SendCommand(PipeCommand.MouseMove, para);
@@ -236,7 +242,9 @@ namespace Ventuz.StreamOut
             TouchEnd = 0x12, // Release a touch. Must be followed by a TouchPara structure        
             TouchCancel = 0x13, // Cancal a touch if possible. Must be followed by a TouchPara structure
 
-            Key = 0x20, // Send a keystroke. Must be followed by a KeyPara structure
+            Char = 0x20, // Send a keystroke. Must be followed by a KeyPara structure
+            KeyDown = 0x21, // Send a key down event
+            KeyUp = 0x22, // Send a key down event
 
             MouseMove = 0x28, // Mouse positon update. Must be followed by a MouseXYPara structure
             MouseButtons = 0x29, // Mouse buttons update. Must be followed by a MouseButtonsPara structure
@@ -317,7 +325,6 @@ namespace Ventuz.StreamOut
                         }
                         catch (TimeoutException)
                         {
-                            Debug.WriteLine("nope");
                             continue;
                         }
 
